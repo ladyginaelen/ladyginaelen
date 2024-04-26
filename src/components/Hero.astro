@@ -1,0 +1,63 @@
+---
+import CircleText from '../components/CircleText.astro'
+---
+
+
+<section class="hero" data-scroll-section>
+    <h1 data-scroll data-scroll-speed="3">LADYGINA ✦ ELENA ✦ LADYGINA ✦  ELENA ✦ </h1>
+</section>
+
+<style>
+
+    h1 {
+        color: white;
+        font-size: calc(12vw - 8.60465px);
+        font-weight: 200;
+        position:absolute;
+        width: 300%;
+        bottom: 0;
+        padding: 3rem 4rem;
+        overflow: hidden;
+        animation: move 30s infinite linear;
+    }
+
+
+    p {
+        font-size: clamp(1.275rem, 1.5vw, 1.5rem);
+        position: absolute;
+        top: 45%;
+        left: 10%;
+        width: 20ch;
+    }
+ 
+
+    .hero {
+        height: 100dvh;
+        background: url(bg-hero.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+
+    @keyframes move {
+        from {
+            transform: translateX(0%);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+
+    @media (max-width: 1279px) {
+      h1 {
+        font-size: 5rem;
+        width: 3000px;
+      } 
+    }
+</style>

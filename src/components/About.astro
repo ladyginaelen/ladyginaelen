@@ -1,0 +1,81 @@
+---
+import Label from "./Label.astro"
+---
+
+<section class="about" data-scroll-section>
+	<div class="section-header">
+		<Label label="Обо мне"/>
+		<p data-scroll data-scroll-speed="1">Я — дипломированный, сертифицированный и&nbsp;самопровозглашенный специалист в области индивидуального проектирования имиджа и&nbsp;стиля  уже 15 лет.</p>
+	</div>
+	<div class="section-content" data-scroll data-scroll-speed="1">
+		<p>Создание стиля - не просто хобби или увлечение - для меня это профессия и призвание.
+Мой подход базируется на синтезе 3х составляющих: физические данные+психологический портрет+социальные задачи.</p>
+ <p>Эксперименты с гардеробом могут стать захватывающим инструментом самопознания, эффективным средством для прохождения кризиса, верным механизмом освоения нового социального статуса.
+</p>
+<p>Одевать только тело очень просто, как манекен. Но я убеждена, что самое ценное - это попасть в «угольное ушко», сформированное синтезом ваших физических данных, психологических и социальных потребностей. Вот где магия, и кайф. 
+</p>
+<p>
+И да, гардероб и шопинг должны приносить не только пользу, но и истинное удовольствие.
+Если вы в это верите - то вам ко мне, а если не верите, - то ко мне ТОЧНО))
+</p>
+	</div>
+</section>
+
+<style>
+
+	.about {
+		max-width: 1500px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+
+		padding: 0 8rem;
+
+		margin-top: 9rem;
+
+	}
+
+	.section-header {
+		display: grid;
+		grid-template-columns: 15% 75%;
+		align-items: start;
+		gap: 10%;
+	}
+
+	.section-content p {
+		color: #232323;
+        font-size: 16px;
+		line-height: 150%;
+		margin-top: 2rem;
+		margin-left: 25%;
+		max-width: 60ch;
+	}
+
+	.section-header p {
+        font-size: clamp(1.5rem, 1.9vw, 2rem);
+		line-height: 140%;
+		font-weight: var(--fw-400);
+		max-width: 38ch;
+	}
+
+	@media (max-width: 1279px) {
+
+		.about {
+			padding: 0 1.5rem;
+			margin: 0;
+			margin-top: 4rem;
+		}
+
+		.section-header {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+
+		.section-content p{
+			margin: 0;
+			margin-top: 2rem;
+		}
+
+	}
+</style>

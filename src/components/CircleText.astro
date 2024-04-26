@@ -1,0 +1,30 @@
+---
+---
+
+<div id="circle-txt">
+   ПРЕДЛОЖИТЬ ✦ ПРОЕКТ ✦ ПРЕДЛОЖИТЬ ✦ ПРОЕКТ ✦  
+</div>
+
+
+<style>
+    #circle-txt {
+        animation: rounded 18s linear infinite;
+        position: absolute;
+        z-index: 5;
+        font-weight: 400;
+        color: black;
+        left: 45%;
+    }
+
+    @keyframes rounded{
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<script>
+    import CircleType from 'circletype'
+    let circle = new CircleType(document.getElementById('circle-txt'));
+    circle.raduis(360);
+</script>

@@ -1,0 +1,64 @@
+*,
+*::before, 
+*::after{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+
+    --clr-primary-500: oklch(28% 0.104 268.5);
+
+    --clr-secondary: #f6f6f6;
+
+    --clr-bg: oklch(97.6% 0.011 262.5);
+
+    --clr-white: white;
+    --clr-black: black;
+
+
+    --ff-main: 'Montserrat', sans-serif;
+
+    --fs-500: 18px;
+    --fs-400: 16px;
+    --fs-300: 14px;
+    --fs-200: 12px;
+
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 700;
+
+
+
+}
+
+
+html {
+	font-family: var(--ff-main); 
+	overflow: hidden;
+}
+
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}

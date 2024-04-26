@@ -1,0 +1,67 @@
+---
+---
+
+<header>
+  <nav>
+    <div class="logo">Elena Ladygina</div>
+    <ul>
+     <li><a href="#">Обо мне</a></li>
+     <li><a href="#">Процесс</a></li>
+     <li><a href="#">Принципы</a></li>
+     <li><a href="#">Контакты</a></li>
+    </ul>
+    <div>Контакты</div>
+  </nav>
+    
+</header>
+
+
+<style>
+
+  header {
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    color: var(--clr-white);
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid white;
+    font-size: 16px;
+    
+  }
+
+  nav {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 8rem;
+  } 
+
+  ul {
+    display: flex;
+    gap: 4rem;
+    list-style: none;
+  }
+
+  a {
+    color: var(--clr-white);
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  @media (max-width: 1279px) {
+
+    ul {
+      display: none;
+    }
+
+    nav {
+      padding: 1rem 1.5rem;
+    }
+
+  }
+
+
+
+</style>

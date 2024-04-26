@@ -1,0 +1,70 @@
+---
+import Label from './Label.astro'
+---
+
+<section class="contacts-section" data-scroll-section>
+	<div class="main-content">
+		<Label label="Контакты" />
+		<p data-scroll data-scroll-speed="1" data-scroll-class="text-op">Напишите мне на удобный для вас мессенджер</p>
+		<p data-scroll data-scroll-speed="1" data-scroll-class="text-op">+7 977 777 77 77</p>
+	</div>
+	</div>
+</section>
+
+
+<style>
+
+	.contacts-section {
+		max-width: 1500px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		padding: 8rem;
+        padding-top: 0;
+	}
+
+
+	.main-content p {
+        font-size: clamp(1.5rem, 1.9vw, 2rem);
+		width: 40ch;
+		margin-top: -20px;
+		line-height: 150%;
+		font-weight: 400;
+		text-align: center;
+	}
+
+
+	.text-op {
+		opacity: 1;
+	}
+
+
+	.main-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 3rem;
+		justify-content: space-between;
+		padding-bottom: 2rem;
+	}
+
+	.main-content p {
+		line-height: 150%;
+		font-weight: 400;
+	}
+
+
+	@media (max-width: 1279px) {
+		.process {
+			height: auto;
+		}
+	}
+
+
+
+	
+
+
+
+</style>

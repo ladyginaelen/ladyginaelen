@@ -1,0 +1,127 @@
+---
+import Label from './Label.astro'
+---
+
+<section class="principles-section" data-scroll-section>
+	<div class="section-header">
+		<Label label="Принципы"/>
+		<p data-scroll data-scroll-speed="1">Не просто тряпочки перекладываем.<br> Это увлекательная игра преображений, открытий вовне и внутри.
+</p>
+	</div>
+	<div class="cards">
+		<div class="card"><p>Полный спектр услуг</p><p class="disc">От разработки мимдж-проекта до реализации гардедероба «под ключ»</p></div>
+		<div class="card"><p>Бюджет не проблема </p><p class="disc">От ЦУМа до Фамилии, но бюджет должен быть реалистичным</p></div>
+		<div class="card"><p>Лояльность наше все</p><p class="disc">По договоренности можем провести работу дистанционно, онлайн, с доставкой в  индивидуальные примерочные или удобную для вас локацию.</p></div>
+		<div class="card"><p>Все идивидуально</p><p class="disc">Бюджет, временные возможности, ваши личные задачи = психологический комфорт - важнейший аспект для желаемых изменений</p></div>
+	</div>
+	</div>
+</section>
+
+<style>
+
+	.principles-section {
+		max-width: 1500px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		padding: 8rem;
+		padding-top: 0;
+	}
+
+	.section-header {
+		display: grid;
+		grid-template-columns: 15% 75%;
+		align-items: start;
+		gap: 10%;
+	}
+
+	.section-header p {
+        font-size: clamp(1.5rem, 1.9vw, 2rem);
+		line-height: 140%;
+		font-weight: var(--fw-400);
+		max-width: 38ch;
+	}
+	
+	.cards {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		margin-left: 25%;
+		margin-top: 5%;
+
+	}
+
+	.card {
+		width: 100%;
+		border-bottom: 1px solid #ccc;
+		font-size: 2rem;
+		padding-top: 3rem;
+	}
+
+
+	.text-op {
+		opacity: 1;
+	}
+
+
+	.main-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 3rem;
+		padding-bottom: 6rem;
+		justify-content: space-between;
+	}
+
+	.main-content p {
+        font-size: clamp(1.5rem, 1.9vw, 2rem);
+		width: 40ch;
+		margin-top: -20px;
+		line-height: 150%;
+		font-weight: 400;
+		text-align: center;
+	}
+
+	.disc {
+		font-size: 16px;
+		padding: 1rem 0;
+		width: 65ch;
+	}
+
+
+	@media (max-width: 1279px) {
+		.principles-section{
+			height: auto;
+			padding: 0 1.5rem;
+		}
+
+		.section-header {
+			display: block;
+		}
+
+		.section-header p {
+			margin-top: 2rem;
+		}
+
+		.card p {
+			font-size: 1.5rem;
+		}
+		
+		.cards {
+			margin: 0;
+		}
+
+		.card .disc {
+			width: auto;
+			font-size: 16px;
+		}
+	}
+
+
+
+	
+
+
+
+</style>
