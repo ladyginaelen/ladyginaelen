@@ -13,10 +13,10 @@ import Contacts from '../components/Contacts.astro';
 ---
 
 <Layout title="LADYGINA ELEN">
-	<main data-scroll-container>
+	<main scroll-container>
 		<Header />
-		<Hero data-scroll-section />
-		<About data-scroll-section />
+		<Hero />
+		<About />
 		<Mission />
     <Services />
     <Contacts />
@@ -28,8 +28,8 @@ import Contacts from '../components/Contacts.astro';
 <style>
 
 main {
-		overflow: hidden;
 		height: 100%;
+    overflow-x: hidden; 
 	}
 
 .bg {
@@ -94,6 +94,8 @@ import LocomotiveScroll from "locomotive-scroll";
 const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
-	multiplier: 0.8,
+	  multiplier: 1,
 });
+
+ 
 </script>

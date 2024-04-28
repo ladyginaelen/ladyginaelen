@@ -2,11 +2,11 @@
 import Label from './Label.astro'
 ---
 
-<section class="contacts-section" data-scroll-section>
-	<div class="main-content">
+<section class="contacts-section">
+	<div class="section-content">
 		<Label label="Контакты" />
-		<p data-scroll data-scroll-speed="1" data-scroll-class="text-op">Напишите мне на удобный для вас мессенджер</p>
-		<p data-scroll data-scroll-speed="1" data-scroll-class="text-op">+7 977 777 77 77</p>
+		<p>Напишите мне на удобный для вас мессенджер</p>
+		<p>+7 977 777 77 77</p>
 	</div>
 	</div>
 </section>
@@ -24,7 +24,7 @@ import Label from './Label.astro'
 	}
 
 
-	.main-content p {
+	.section-content p {
         font-size: clamp(1.5rem, 1.9vw, 2rem);
 		width: 40ch;
 		margin-top: -20px;
@@ -39,7 +39,7 @@ import Label from './Label.astro'
 	}
 
 
-	.main-content {
+	.section-content {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -49,7 +49,7 @@ import Label from './Label.astro'
 		padding-bottom: 2rem;
 	}
 
-	.main-content p {
+	.section-content p {
 		line-height: 150%;
 		font-weight: 400;
 	}
