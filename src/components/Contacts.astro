@@ -1,12 +1,19 @@
 ---
 import Label from './Label.astro'
+ import { Icon } from 'astro-icon/components'
 ---
 
-<section class="contacts-section">
+<section class="contacts-section" id="contacts">
 	<div class="section-content">
 		<Label label="Контакты" />
-		<p>Напишите мне на удобный для вас мессенджер</p>
+		<p>Напишите мне на удобный<br> для вас мессенджер</p>
 		<p>+7 977 777 77 77</p>
+     <div class="social-links">
+        <a href="#"><Icon name="telegram-icon" /></a>
+        <a href="#"><Icon name="whatsapp-icon" /></a>
+        <a href="#"><Icon name="envelope-icon" /></a>
+     </div>
+		
 	</div>
 	</div>
 </section>
@@ -20,8 +27,24 @@ import Label from './Label.astro'
 		display: flex;
 		flex-direction: column;
 		padding: 8rem;
-        padding-top: 0;
+        padding-top: 50px;
 	}
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+	color: white !important;
+  }
+
+  .social-links > * {
+    flex: 1;
+  }
+
+  [data-icon] {
+    font-size: 1.3rem;
+  }
+
 
 
 	.section-content p {
@@ -58,6 +81,10 @@ import Label from './Label.astro'
 	@media (max-width: 1279px) {
 		.process {
 			height: auto;
+		}
+
+		p {
+			width: 25ch;
 		}
 	}
 

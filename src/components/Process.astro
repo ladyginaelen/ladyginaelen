@@ -3,7 +3,7 @@ import Label from './Label.astro'
 import Card from './Card.astro'
 ---
 
-<section class="process-section">
+<section class="process-section" id="process">
 	<div class="main-content">
 		<Label label="Процесс" />
 		<p>Не драматизируйте — закажите имидж-проект у перфекциониста / профессионала</p>
@@ -14,7 +14,7 @@ import Card from './Card.astro'
 		<Card number="03" text="Разбор гардероба $ (2-4 часа) " price="7тр./час"/>
 		<Card number="04" text="Шопинг $ (2-4 часа ТЦ; online, выездной)" price="7тр./час"/>
 		<Card number="05" text="Составление комплектов $ (1-2 часа; опционально, возможно без вашего присутствия) " price="7тр./час"/>
-		<Card number="06" text="Дистанционная поддержка в формировании навыка быть на стиле каждый день. Анализ проделанной работы для корректировки в будущем." price="7тр./час"/>
+		<Card number="06" text="Дистанционная поддержка в формировании навыка быть на стиле каждый день. Анализ проделанной работы для корректировки в будущем." price="бесплатно"/>
 
 	</div>
 	</div>
@@ -35,6 +35,7 @@ import Card from './Card.astro'
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: 2rem;
+		padding-top: 50px;
 	}
 
 
