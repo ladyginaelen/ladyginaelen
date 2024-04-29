@@ -12,7 +12,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import Contacts from '../components/Contacts.astro';
 ---
 
-<Layout title="LADYGINA ELEN">
+<Layout title="Ладыгина Елена - профессиональный стилист и имиджмейкер">
 	<main scroll-container>
 		<Header />
 		<Hero />
@@ -95,6 +95,16 @@ const scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
 	  multiplier: 1,
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
 
  

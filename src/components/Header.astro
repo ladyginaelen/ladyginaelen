@@ -1,16 +1,36 @@
 ---
+ import { Icon } from 'astro-icon/components'
 ---
 
 <header>
   <nav>
-    <div class="logo">Elena Ladygina</div>
-    <ul>
-     <li><a href="#">Обо мне</a></li>
+
+    <a href="/" class="logo">✦ Elena Ladygina</a>
+
+    <ul class="desktop-menu">
+     <li><a href="#about">Обо мне</a></li>
      <li><a href="#">Процесс</a></li>
      <li><a href="#">Принципы</a></li>
      <li><a href="#">Контакты</a></li>
     </ul>
-    <div>Контакты</div>
+
+     <div class="social-links">
+        <a href="#"><Icon name="telegram-icon" /></a>
+        <a href="#"><Icon name="whatsapp-icon" /></a>
+        <a href="#"><Icon name="envelope-icon" /></a>
+     </div>
+    </ul>
+
+    <ul class="sidebar" data-visible="false">
+     <li><a href="#about">Обо мне</a></li>
+     <li><a href="#">Процесс</a></li>
+     <li><a href="#">Принципы</a></li>
+     <li><a href="#">Контакты</a></li>
+    </ul>
+
+    <div class="hum"><Icon name="hum" /></div>
+
+
   </nav>
     
 </header>
@@ -42,22 +62,84 @@
     display: flex;
     gap: 4rem;
     list-style: none;
+    justify-content: flex-end;
+    align-items: center;
   }
+  
 
   a {
-    color: var(--clr-white);
+    color: white;
     text-decoration: none;
     font-size: 16px;
+    transition: all .3s ease-in-out;
+  }
+
+  a:hover {
+    color: black;
+    scale: 1.2;
+  }
+
+  svg {
+    height: 100%;
+  }
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+  }
+
+  .social-links > * {
+    flex: 1;
+  }
+
+  [data-icon] {
+    font-size: 1.3rem;
+  }
+
+.hum {
+    display: none;
+  }
+
+  .sidebar {
+    height: 100dvh;
+    width: 65%;
+    background-color: #cccccc;
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+    transform: translateX(100%);
+    transition: all .3s ease-in-out;
+    gap: 2rem;
+  }
+
+  .sidebar[data-visible="true"] {
+
+    transform: translateX(0%);
+
   }
 
   @media (max-width: 1279px) {
 
-    ul {
+    .desktop-menu {
       display: none;
+    }
+
+    .hum {
+      display: block;
+      z-index: 999;
     }
 
     nav {
       padding: 1rem 1.5rem;
+    }
+
+    .social-links {
+      display: none;
     }
 
   }
@@ -65,3 +147,22 @@
 
 
 </style>
+
+
+<script>
+
+  const hum = document.querySelector('.hum');
+  const sidebar = document.querySelector('.sidebar');
+
+  hum.addEventListener('click', ()=>{
+    const visibility = sidebar.getAttribute('data-visible');
+
+    if(visibility === 'false') {
+     sidebar.setAttribute('data-visible', 'true'); 
+
+    } else if(visibility === 'true') {
+      sidebar.setAttribute('data-visible', 'false');
+    }
+  })
+
+</script>
