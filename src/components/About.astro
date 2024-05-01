@@ -2,29 +2,73 @@
 import Label from "./Label.astro"
 ---
 
-<section class="about" id="about">
-	<div class="section-header" id="about">
-		<Label data-scroll data-scroll-sticky data-scroll-target="#about" label="Обо мне"/>
-		<p>Я — дипломированный, сертифицированный и&nbsp;самопровозглашенный специалист в области индивидуального проектирования имиджа и&nbsp;стиля  уже 15 лет.</p>
+<section class="about">
+	<div class="section-header" id="about" data-scroll data-scroll-speed="0.1">
+		<Label label="Обо мне"/>
+		<p data-scroll data-scroll-class="text-rev">Я — дипломированный, сертифицированный и&nbsp;самопровозглашенный специалист в области индивидуального проектирования имиджа и&nbsp;стиля  уже более 15 лет.</p>
 	</div>
-	<div class="section-content">
+	<div class="section-content" data-scroll data-scroll-speed="0.1">
+		<div  class="img-container" data-scroll data-scroll-speed="0.1">
+			<img src="about-img.jpg" alt="" data-scroll data-scroll-speed="-0.2">
+		</div>
+		<div>
 		<p>Создание стиля - не просто хобби или увлечение - для меня это профессия и призвание.
-Мой подход базируется на синтезе 3х составляющих: физические данные+психологический портрет+социальные задачи.</p>
- <p>Эксперименты с гардеробом могут стать захватывающим инструментом самопознания, эффективным средством для прохождения кризиса, верным механизмом освоения нового социального статуса.
-</p>
-<p>Одевать только тело очень просто, как манекен. Но я убеждена, что самое ценное - это попасть в «угольное ушко», сформированное синтезом ваших физических данных, психологических и социальных потребностей. Вот где магия, и кайф. 
-</p>
-<p>
-И да, гардероб и шопинг должны приносить не только пользу, но и истинное удовольствие.
-Если вы в это верите - то вам ко мне, а если не верите, - то ко мне ТОЧНО))
-</p>
+			Мой подход базируется на синтезе 3х составляющих: физические данные+психологический портрет+социальные задачи.</p>
+			<p>Эксперименты с гардеробом могут стать захватывающим инструментом самопознания, эффективным средством для прохождения кризиса, верным механизмом освоения нового социального статуса.
+			</p>
+			<p>Одевать только тело очень просто, как манекен. Но я убеждена, что самое ценное - это попасть в «угольное ушко», сформированное синтезом ваших физических данных, психологических и социальных потребностей. Вот где магия, и кайф. 
+			</p>
+			<p>
+			И да, гардероб и шопинг должны приносить не только пользу, но и истинное удовольствие.
+			Если вы в это верите - то вам ко мне, а если не верите, - то ко мне ТОЧНО))<br><br><br><br>
+			</p>
+			<a href="#contacts" class="btn">Связаться</a>
+		</div>
+		
+		
 	</div>
+
+	<div class="line-container">
+		<img class="line" src="line.svg" alt="">
+	</div>
+
 </section>
 
 <style>
 
+	a {
+		color: #232323;
+		font-size: 1.5rem;
+		padding-top: 50px;
+		
+	}
+
+	.line {
+		width: 22%;
+		margin-left: -350px;
+	}
+
+	.line-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 20px;
+	}
+
+	img {
+		width: 100%;
+		display: block;
+	}
+
+	.img-container {
+		overflow: hidden;
+		border-radius: 2% 2% 2% 2%;
+		width: 100%;
+		height: 600px;
+	}
+
 	.about {
-		max-width: 1500px;
+		max-width: 1800px;
 		margin: 0 auto;
 		display: flex;
 		justify-content: center;
@@ -38,9 +82,19 @@ import Label from "./Label.astro"
 
 	.section-header {
 		display: grid;
-		grid-template-columns: 15% 75%;
+		grid-template-columns: 10% 80%;
 		align-items: start;
 		gap: 10%;
+	}
+
+	.section-content {
+		display: flex;
+		gap: 8rem;
+		margin-top: 30px;
+	}
+
+	.section-content > * {
+		flex: 1;
 	}
 
 	.section-content p {
@@ -48,15 +102,20 @@ import Label from "./Label.astro"
         font-size: 16px;
 		line-height: 150%;
 		margin-top: 2rem;
-		margin-left: 25%;
 		max-width: 60ch;
+		
 	}
 
+
 	.section-header p {
-        font-size: clamp(1.5rem, 1.9vw, 2rem);
+        font-size: clamp(1.55em, 2.3vw, 2.5em);
 		line-height: 140%;
 		font-weight: var(--fw-400);
 		max-width: 38ch;
+	}
+
+	.text-rev {
+		opacity: 1;
 	}
 
 	@media (max-width: 1279px) {

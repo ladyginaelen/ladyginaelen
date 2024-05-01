@@ -24,7 +24,7 @@
     <ul class="sidebar" data-visible="false">
      <li><a href="#about">Обо мне</a></li>
      <li><a href="#process">Процесс</a></li>
-     <li><a href="#pricinces">Принципы</a></li>
+     <li><a href="#principles">Принципы</a></li>
      <li><a href="#contacts">Контакты</a></li>
     </ul>
 
@@ -40,22 +40,20 @@
 
   header {
     width: 100%;
-    position: fixed;
+    position: absolute;
     z-index: 99;
     color: var(--clr-white);
-    backdrop-filter: blur(4px);
-    border-bottom: 1px solid white;
-    font-size: 16px;
+    font-size: 18px;
     
   }
 
   nav {
-    max-width: 1500px;
+    max-width: 1800px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 8rem;
+    padding: 2rem 8rem;
   } 
 
   ul {
@@ -70,8 +68,9 @@
   a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
     transition: all .3s ease-in-out;
+    font-weight: 400;
   }
 
   a:hover {
@@ -94,7 +93,7 @@
   }
 
   [data-icon] {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
 .hum {
@@ -115,6 +114,7 @@
     transform: translateX(100%);
     transition: all .3s ease-in-out;
     gap: 2rem;
+    display: none;
   }
 
   .sidebar[data-visible="true"] {
@@ -124,6 +124,10 @@
   }
 
   @media (max-width: 1279px) {
+
+    header {
+      position: fixed;
+    }
 
     .desktop-menu {
       display: none;

@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
 import Hero from '../components/Hero.astro'
+import Hero2 from '../components/Hero2.astro'
 import About from '../components/About.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
@@ -15,13 +17,13 @@ import Contacts from '../components/Contacts.astro';
 <Layout title="Ладыгина Елена - профессиональный стилист и имиджмейкер">
 	<main scroll-container>
 		<Header />
-		<Hero />
+		<Hero2 />
 		<About />
 		<Mission />
     <Services />
     <Contacts />
 		<Footer />
-		<!-- <div class="bg"></div> -->
+		<div class="bg"></div>
 	</main>
 </Layout>
 
@@ -34,7 +36,7 @@ main {
 
 .bg {
   position: fixed;
-  z-index: 1;
+  z-index: 98;
   top: -50%;
   left: -50%;
   right: -50%;
@@ -44,7 +46,7 @@ main {
   background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation .2s infinite;
-  opacity: .9;
+  opacity: 1;
   visibility: visible;
 }
 

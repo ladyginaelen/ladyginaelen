@@ -5,19 +5,35 @@ import { Icon } from 'astro-icon/components'
 
 
 <section class="hero">
-    <p class="heading">LADYGINA ✦ ELENA ✦ LADYGINA ✦  ELENA ✦ </p>
+    <p class="heading" data-scroll data-scroll-speed="0.7">LADYGINA ✦ ELENA ✦ LADYGINA ✦  ELENA ✦ </p>
     <div class="hero-content">
         <div class="left">
-            <p>Профессиональный <br> стилист имиджмейкер</p>
+            <p> Стилист<br> имиджмейкер</p>
         </div>
+         <div class="img-container"><img src="bg-test.png" alt="" data-scroll data-scroll-speed="-0.2"> </div>
         <div class="right">
             <Icon name="arrow" data-scroll data-scroll-speed="0.2"/>
-            <p data-scroll data-scroll-speed="0.1">Профессиональный <br> стилист имиджмейкер</p>
+            <p data-scroll data-scroll-speed="0.1">Стилист —<br>имиджмейкер</p>
         </div>
     </div>
 </section>
 
 <style>
+
+    img {
+        position: absolute;
+        bottom: 0;
+        max-width: 85%;
+        height: 85%;
+        z-index: 2;
+    }
+
+
+    .img-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
 
     .heading {
         color: white;
@@ -25,6 +41,7 @@ import { Icon } from 'astro-icon/components'
         font-weight: 200;
         position:absolute;
         width: 300%;
+        z-index: 99;
         bottom: 0;
         padding: 3rem 4rem;
         overflow: hidden;
@@ -34,10 +51,8 @@ import { Icon } from 'astro-icon/components'
 
     .hero {
         height: 100dvh;
-        background: url(/bg-hero.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+        background: rgb(255,255,255);
+        background: radial-gradient(circle, rgba(255,255,255,1) 18%, rgb(158, 171, 177) 94%);
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -46,34 +61,33 @@ import { Icon } from 'astro-icon/components'
     }
 
     .hero-content {
-        display: flex;
-        justify-content: space-between;
-        min-width: 1800px;
-        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         padding: 0 8rem;
-    }
-
-    .hero-content > * {
-        flex: 1;
+        margin-top: -8rem;
     }
 
 
     .hero-content .right p {
+        font-size: clamp(1.55em, 2.3vw, 2.5em);
+        line-height: 120%;
+        letter-spacing: -1px;
+        font-weight: 400;
         color: white;
-        font-size: clamp(1.5rem, 1.9vw, 2rem);
-        letter-spacing: -2px;
+         
     }
 
     .hero-content .right {
         display: flex;
         flex-direction: column;
-        width: 25%;
+        justify-content: center;
+        padding-left: 4rem;
     }
 
     [data-icon] {
 
-        font-size: 2rem;
-        margin-bottom: 4rem;
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
     }
 
 
