@@ -7,6 +7,7 @@ const { number, text, price} = Astro.props;
         <h3 class="card-number">{number}</h3>
         <div>
             <p class="card-text">{text}</p>
+            <hr>
             <p class="card-price">{price}</p>
         </div>
     </div>
@@ -15,18 +16,25 @@ const { number, text, price} = Astro.props;
 
 <style>
 
+    hr {
+        margin: 1.5rem 0;
+        border: 1px solid #8a8a8a25;
+    }
+
 	.card {
-		border: 1px solid #ccc;
 		border-radius: 20px;
         padding: 2rem;
         transition: .8s ease-in-out;
+        background: #ffffff1e;
+        backdrop-filter: blur(3px);
+        border: 1px solid #ffffffd0;
+        z-index: 90;
 	}
 
     .card:hover {
-        background: #232323;
-        color: white;
-        rotate: -3deg;
+        box-shadow: rgba(212, 208, 184, 0.712) 4px 4px 18px;
     }
+
 
     .card-number {
         margin-bottom: 2rem;

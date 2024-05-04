@@ -42,7 +42,6 @@
     width: 100%;
     position: absolute;
     z-index: 99;
-    color: var(--clr-white);
     font-size: 18px;
     
   }
@@ -66,15 +65,15 @@
   
 
   a {
-    color: white;
+    color: var(--clr-white);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     transition: all .3s ease-in-out;
     font-weight: 400;
   }
 
   a:hover {
-    color: black;
+    color: var(--clr-white-0);
     scale: 1.2;
   }
 
@@ -93,7 +92,8 @@
   }
 
   [data-icon] {
-    font-size: 1.5rem;
+    font-size: 1.3vw;
+    color: var(--clr-white);
   }
 
 .hum {
@@ -144,6 +144,14 @@
 
     .social-links {
       display: none;
+    }
+
+    [data-icon] {
+      font-size: 18px;
+      height: 100%;
+    }
+    .sidebar {
+      display: block;
     }
 
   }

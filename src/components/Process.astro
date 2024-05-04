@@ -3,39 +3,83 @@ import Label from './Label.astro'
 import Card from './Card.astro'
 ---
 
-<section class="process-section" id="process">
-	<div class="main-content">
+<section class="process-section" data-scroll data-scroll-class="section-op">
+	<div class="main-content" data-scroll data-scroll-speed="0.1">
 		<Label label="Процесс" />
-		<p>Не драматизируйте — закажите имидж-проект у перфекциониста / профессионала</p>
+		<p>Как проходит процесс и&nbsp;стоимость?</p>
+		<p class="dis">Это увлекательная игра преображений, открытий вовне и внутри.</p>
 	</div>
-	<div class="cards">
-		<Card number="01" text="Встреча-знакомство для понимания комфорта  совместной работы и постановки задач." price="Бесплатно"/>
-		<Card number="02" text="Разработка стилевой прототипа. Выявление ваших предпочтений, границ, стереотипов, потребительской стратегии." price="Бесплатно"/>
-		<Card number="03" text="Разбор гардероба $ (2-4 часа) " price="7тр./час"/>
-		<Card number="04" text="Шопинг $ (2-4 часа ТЦ; online, выездной)" price="7тр./час"/>
-		<Card number="05" text="Составление комплектов $ (1-2 часа; опционально, возможно без вашего присутствия) " price="7тр./час"/>
-		<Card number="06" text="Дистанционная поддержка в формировании навыка быть на стиле каждый день. Анализ проделанной работы для корректировки в будущем." price="бесплатно"/>
+	<div class="cards" data-scroll data-scroll-speed="0.1">
+		<Card number="✦ 01" text="Встреча-знакомство для понимания комфорта  совместной работы и постановки задач." price="БЕСПЛАТНО"/>
+		<Card number="✦ 02" text="Разработка стилевой прототипа. Выявление ваших предпочтений, границ, стереотипов, потребительской стратегии." price="БЕСПЛАТНО"/>
+		<Card number="✦ 03" text="Разбор гардероба (2-4 часа) " price="7тр. / час"/>
+		<Card number="✦ 04" text="Шопинг (2-4 часа ТЦ; online, выездной)" price="7тр. / час"/>
+		<Card number="✦ 05" text="Составление комплектов (1-2 часа; опционально, возможно без вашего присутствия) " price="7тр. / час"/>
+		<Card number="✦ 06" text="Дистанционная поддержка в формировании навыка быть на стиле каждый день. Анализ работы для корректировки в будущем." price="БЕСПЛАТНО"/>
 
 	</div>
 	</div>
+	<div class="post-descri" data-scroll data-scroll-speed="0.1">*Оплачивается только 3,4,5 пункты почасовая оплата</div>
+	<div class="blur-bg"></div>
+	<div class="bg-line"></div>
 </section>
 
 
 <style>
+
+
+
+	.bg-line {
+		position: absolute;
+		width: 800px;
+		height: 800px;
+		border: 1px solid var(--clr-grey-500);
+		border-radius: 50%;
+		z-index: 3;
+		left: -350px;
+		margin-top: -100px;
+		opacity: 0.5;
+	}
+
+	.post-descri {
+		width: 100%;
+		text-align: center;
+		margin-top: 18px;
+		font-weight: 300;
+	}
+
+	.blur-bg {
+		width: 800px;
+		height: 500px;
+		background: #F5DFC7;
+		filter: blur(90px);
+		position: absolute;
+		z-index: -1;
+		left: 50%;
+		transform: translateX(-50%);	
+		margin-top: 10%;
+	}
+
 
 	.process-section {
 		max-width: 1800px;
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
-		padding: 4rem 8rem;
+		padding: 10rem 8rem;
+		opacity: 0;
+		overflow: hidden;
+	}
+
+	.section-op {
+		opacity: 1;
 	}
 	
 	.cards {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
-		margin-top: 50px;
+		z-index: 90;
 	}
 
 
@@ -57,10 +101,15 @@ import Card from './Card.astro'
 	.main-content p {
         font-size: clamp(1.55em, 2.3vw, 2.5em);
 		width: 40ch;
-		margin-top: -20px;
+		margin-top: -10px;
 		line-height: 150%;
 		font-weight: 400;
 		text-align: center;
+	}
+
+	.dis {
+		font-size: 18px !important;
+		margin-top: -35px !important;
 	}
 
 
@@ -72,14 +121,31 @@ import Card from './Card.astro'
 
 		.main-content p {
 			width: auto;
+			margin: 0;
+		}
+
+		.dis {
+			margin-top: 20px !important;
+			font-size: 16px !important;
+			display: none;
 		}
 		
 		.main-content {
 			padding: 0;
+			gap: 0;
 		}
 
 		.cards {
 			grid-template-columns: 1fr;
+		}
+
+		.blur-bg {
+			width: 200px;
+			height: 200px;
+		}
+
+		.bg-line {
+			display: none;
 		}
 	}
 

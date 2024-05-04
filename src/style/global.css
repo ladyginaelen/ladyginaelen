@@ -10,14 +10,19 @@
 
 :root {
 
-    --clr-primary-500: oklch(28% 0.104 268.5);
+    --clr-bg: #F5E5D1;
 
-    --clr-secondary: #f6f6f6;
+    --clr-primary-600: #136A60;
+    --clr-primary-500: #4F826B;
+    --clr-primary-400: #7D9A7B;
+    --clr-primary-300: #A8B292;
 
-    --clr-bg: oklch(97.6% 0.011 262.5);
+    --clr-white-0: #fff;
+    --clr-white: #F5E5D1;
+    --clr-black: #232323;
 
-    --clr-white: white;
-    --clr-black: black;
+    --clr-grey-500: #ccc;
+    --clr-grey-400: #D1CBAF;
 
 
     --ff-main: 'Montserrat', sans-serif;
@@ -46,6 +51,7 @@ html {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background: #F7F3E8;
 }
 
 

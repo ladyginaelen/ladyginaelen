@@ -10,15 +10,21 @@ import { Icon } from 'astro-icon/components'
         <div class="left">
             <p> Стилист<br> имиджмейкер</p>
         </div>
-         <div class="img-container"><img src="bg-test.png" alt="" data-scroll data-scroll-speed="-0.2"> </div>
+         <div class="img-container">
+            <img src="bg-test.png" alt="" data-scroll data-scroll-speed="-0.2"> 
+        </div>
         <div class="right">
             <Icon name="arrow" data-scroll data-scroll-speed="0.2"/>
             <p data-scroll data-scroll-speed="0.1">Стилист —<br>имиджмейкер</p>
         </div>
     </div>
+
+    <div class="arc"></div>
+    <div class="arc bg-gradient"></div>
 </section>
 
 <style>
+
 
     img {
         position: absolute;
@@ -35,15 +41,36 @@ import { Icon } from 'astro-icon/components'
         justify-content: center;
     }
 
+    .arc {
+        border: 1px solid var(--clr-white);
+        border-radius: 50% 50% 0 0 ;
+        height: 75%;
+        width: 33%;
+        margin: 0 auto;
+        bottom: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .bg-gradient {
+        border: none;
+        background: white;
+        filter: blur(180px);
+        width: 700px;
+        height: 800px;
+        bottom: -100px; 
+    }
+
     .heading {
-        color: white;
+        color: var(--clr-white);
         font-size: calc(12vw - 8.60465px);
         font-weight: 200;
         position:absolute;
         width: 300%;
         z-index: 99;
         bottom: 0;
-        padding: 3rem 4rem;
+        padding: 1rem 4rem;
         overflow: hidden;
         animation: move 30s infinite linear;
     }
@@ -51,20 +78,25 @@ import { Icon } from 'astro-icon/components'
 
     .hero {
         height: 100dvh;
-        background: rgb(255,255,255);
-        background: radial-gradient(circle, rgba(255,255,255,1) 18%, rgb(158, 171, 177) 94%);
+        background: var(--clr-white-0);
+        background: linear-gradient(183deg, var(--clr-primary-400) 20%, var(--clr-primary-500) 94%);
         overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: center;
         position: relative;
+        z-index: 9;
+    }
+
+    .left {
+        opacity: 0;
     }
 
     .hero-content {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         padding: 0 8rem;
-        margin-top: -8rem;
+        margin-top: -6rem;
     }
 
 
@@ -73,7 +105,7 @@ import { Icon } from 'astro-icon/components'
         line-height: 120%;
         letter-spacing: -1px;
         font-weight: 400;
-        color: white;
+        color: var(--clr-white-0);
          
     }
 
@@ -81,13 +113,14 @@ import { Icon } from 'astro-icon/components'
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-left: 4rem;
+        padding-left: 8rem;
     }
 
     [data-icon] {
 
-        font-size: 1.8rem;
+        font-size: 1.3vw;
         margin-bottom: 3rem;
+        color: var(--clr-white) !important;
     }
 
 
@@ -106,5 +139,14 @@ import { Icon } from 'astro-icon/components'
         font-size: 5rem;
         width: 2500px;
       } 
+
+      .hero-content {
+        display: none;
+      }
+
+      .arc {
+        display: none;
+      }
+
     }
 </style>
