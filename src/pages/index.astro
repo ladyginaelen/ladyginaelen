@@ -38,7 +38,7 @@ main {
 
 .bg {
   position: fixed;
-  z-index: 88;
+  z-index: 999;
   top: -50%;
   left: -50%;
   right: -50%;
@@ -50,6 +50,7 @@ main {
   animation: bg-animation .2s infinite;
   opacity: 1;
   visibility: visible;
+  pointer-events: none;
 }
 
 @keyframes bg-animation {
@@ -110,6 +111,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+setTimeout(() => {  
+    LocomotiveScroll.destroy();
+}, 0);
+setTimeout(() => {  
+    LocomotiveScroll.init();
+}, 50);
+setTimeout(() => {  
+    LocomotiveScroll.update();
+}, 1000);
 
  
 </script>

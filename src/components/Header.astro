@@ -19,16 +19,27 @@
         <a href="https://wa.me/+79055082987"><Icon name="whatsapp-icon" /></a>
         <a href="#"><Icon name="envelope-icon" /></a>
      </div>
-    </ul>
 
     <ul class="sidebar" data-visible="false">
      <li><a href="#about">Обо мне</a></li>
-     <li><a href="#process">Процесс</a></li>
-     <li><a href="#principles">Принципы</a></li>
-     <li><a href="#contacts">Контакты</a></li>
+     <li><a href="#process" class="link">Процесс</a></li>
+     <li><a href="#principles" class="link">Принципы</a></li>
+     <li><a href="#contacts" class="link">Контакты</a></li>
+     <li class="mobile-social-links">
+      <>
+        <a href="tel:+79055082987">+7 905 508-29-87</a>
+        
+          <div class="social-links2">
+              <a href="https://t.me/ElenLadyGina"><Icon name="telegram-icon" /></a>
+              <a href="https://wa.me/+79055082987"><Icon name="whatsapp-icon" /></a>
+              <a href="#"><Icon name="envelope-icon" /></a>
+          </div>
+
+      </div>
+    </li>
     </ul>
 
-    <div class="hum"><Icon name="hum" /></div>
+    <div class="hum open"><Icon name="hum" /></div>
 
 
   </nav>
@@ -41,9 +52,13 @@
   header {
     width: 100%;
     position: absolute;
-    z-index: 99;
+    z-index: 999;
     font-size: 18px;
     
+  }
+
+  .logo {
+    z-index: 99;
   }
 
   nav {
@@ -91,6 +106,17 @@
     flex: 1;
   }
 
+  .social-links2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+    padding: 2rem 0;
+  }
+
+  .social-links2 > * {
+  }
+
   [data-icon] {
     font-size: 1.3vw;
     color: var(--clr-white);
@@ -102,25 +128,31 @@
 
   .sidebar {
     height: 100dvh;
-    width: 65%;
-    background-color: #cccccc;
+    width: 100%;
+    background-color: var(--clr-black);
     position: fixed;
     top: 0;
     right: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
     padding: 2rem;
-    transform: translateX(100%);
+    transform: translateY(100%);
     transition: all .3s ease-in-out;
-    gap: 2rem;
     display: none;
+    align-items: center;
+    flex-direction: column;
   }
 
   .sidebar[data-visible="true"] {
 
-    transform: translateX(0%);
+    transform: translateY(0%);
 
+  }
+
+  .sidebar li {
+    text-align: center;
+  }
+
+  .sidebar li a {
+    font-size: 24px;
   }
 
   @media (max-width: 1279px) {
@@ -151,7 +183,14 @@
       height: 100%;
     }
     .sidebar {
-      display: block;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .mobile-social-links {
+      bottom: 2rem;
+      position: absolute;
     }
 
   }
@@ -165,6 +204,7 @@
 
   const hum = document.querySelector('.hum');
   const sidebar = document.querySelector('.sidebar');
+  const link = document.querySelectorAll('.link');
 
   hum.addEventListener('click', ()=>{
     const visibility = sidebar.getAttribute('data-visible');
@@ -176,5 +216,12 @@
       sidebar.setAttribute('data-visible', 'false');
     }
   })
+
+  link.forEach((link) => {
+    link.addEventListener('click', ()=>{
+      sidebar.setAttribute('data-visible', 'false');
+    })
+  })
+
 
 </script>

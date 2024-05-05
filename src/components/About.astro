@@ -3,7 +3,7 @@ import Label from "./Label.astro"
 import { Icon } from "astro-icon/components";
 ---
 
-<section class="about">
+<section class="about" id="about">
 	<div class="section-header" id="about" data-scroll data-scroll-speed="0.1">
 		<Label label="Обо мне"/>
 		<p data-scroll data-scroll-class="text-rev">Я — дипломированный, сертифицированный и&nbsp;самопровозглашенный специалист в области индивидуального проектирования имиджа и&nbsp;стиля  уже более 15 лет.</p>
@@ -19,14 +19,11 @@ import { Icon } from "astro-icon/components";
 		<Icon name="arrow-bend" />
 		<div class="blur-bg"></div>
 		</div>
-		<div>
+		<div style="z-index: 99;">
 			<div class="blur-bg-2"></div>
-		<p>Создание стиля - не просто хобби или увлечение - для меня это профессия и призвание.
+			<p class="text">Создание стиля - не просто хобби или увлечение - для меня это профессия и призвание.
 			Мой подход базируется на синтезе 3х составляющих: физические данные+психологический портрет+социальные задачи.</p>
-			<p>Эксперименты с гардеробом могут стать захватывающим инструментом самопознания, эффективным средством для прохождения кризиса, верным механизмом освоения нового социального статуса.
-			</p>
-			<p>Одевать только тело очень просто, как манекен. Но я убеждена, что самое ценное - это попасть в «угольное ушко», сформированное синтезом ваших физических данных, психологических и социальных потребностей. Вот где магия, и кайф. 
-			</p>
+			<p>Эксперименты с гардеробом могут стать захватывающим инструментом самопознания, эффективным средством для прохождения кризиса, верным механизмом освоения нового социального статуса.</p>
 			<p>
 			И да, гардероб и шопинг должны приносить не только пользу, но и истинное удовольствие.
 			Если вы в это верите - то вам ко мне, а если не верите, - то ко мне ТОЧНО))
@@ -62,6 +59,8 @@ import { Icon } from "astro-icon/components";
 
 	.btn-container {
 		margin-top: 80px;
+		z-index: 99;
+		position: relative;
 	}
 
 	.outline {
@@ -72,7 +71,7 @@ import { Icon } from "astro-icon/components";
 		border-radius: 50%;
 		rotate: 25deg;
 		z-index: -1;
-		top: 25px;
+		top: 8%;
 	}
 
 	[data-icon] {
@@ -85,13 +84,13 @@ import { Icon } from "astro-icon/components";
 
 	.blur-bg {
 		width: calc(50% - 3rem);
-		height: 750px;
-		width: 750px;
+		height: 850px;
+		width: 850px;
 		position: absolute; 
 		border-radius: 50%;
 		z-index: -2;
 		filter: blur(150px);
-		background: #F5DFC7;
+		background: var(--clr-blur);
 		left: -30%;
 		bottom: -60%;
 		opacity: 1;
@@ -105,7 +104,7 @@ import { Icon } from "astro-icon/components";
 		border-radius: 50%;
 		z-index: -2;
 		filter: blur(150px);
-		background: #F5DFC7;
+		background: var(--clr-blur);
 		right: -35%;
 		top: -100%;
 		opacity: 1;
@@ -118,9 +117,14 @@ import { Icon } from "astro-icon/components";
 		padding: 1rem 3rem;
 		border-radius: 50%;
 		text-decoration: none;
-		z-index: 99;
+		z-index: 100;
 		position: relative;
+		transition: all .4s ease-in-out;
 		
+	}
+
+	a:hover {
+		padding: 1.2rem 3.5rem;
 	}
 
 	.line {
@@ -141,7 +145,7 @@ import { Icon } from "astro-icon/components";
 		display: block;
 		rotate: -25deg;
 		margin-left: 12%;
-		margin-top: -50px;
+		margin-top: -40px;
 		object-fit: cover;
 	}
 
@@ -151,7 +155,6 @@ import { Icon } from "astro-icon/components";
 		max-width: 100%;
 		height: 23vw;
 		rotate: 25deg;
-		margin-top: 30px;
 		object-fit: cover;
 	}
 
@@ -165,7 +168,7 @@ import { Icon } from "astro-icon/components";
 		padding: 0 8rem;
 
 		margin-top: 9rem;
-		z-index: 0;
+		z-index: 99;
 	}
 
 	.section-header {
@@ -173,12 +176,14 @@ import { Icon } from "astro-icon/components";
 		grid-template-columns: 10% 80%;
 		align-items: start;
 		gap: 10%;
+		z-index: 99;
 	}
 
 	.section-content {
 		display: flex;
 		gap: 8rem;
 		margin-top: 20px;
+		align-items: center;
 	}
 
 	.section-content > * {
@@ -248,7 +253,7 @@ import { Icon } from "astro-icon/components";
 		.outline {
 			height: 200px;
 			width: 100%;
-			margin-top: 0;
+			margin-top: -40px;
 		}
 
 		[data-icon] {
@@ -277,6 +282,14 @@ import { Icon } from "astro-icon/components";
 
 		a {
 			text-align: center;
+		}
+
+		.bg-line {
+			display: none;
+		}
+
+		.text {
+			padding-top: 36px;
 		}
 
 

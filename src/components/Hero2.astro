@@ -64,6 +64,9 @@ import { Icon } from 'astro-icon/components'
 
     .heading {
         color: var(--clr-white);
+        background: -webkit-linear-gradient(var(--clr-white) 40%, var(--clr-primary-400) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         font-size: calc(12vw - 8.60465px);
         font-weight: 200;
         position:absolute;
@@ -72,7 +75,7 @@ import { Icon } from 'astro-icon/components'
         bottom: 0;
         padding: 1rem 4rem;
         overflow: hidden;
-        animation: move 30s infinite linear;
+        animation: move 40s infinite linear;
     }
 
 
