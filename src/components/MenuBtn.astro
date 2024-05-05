@@ -1,0 +1,81 @@
+---
+---
+
+
+ <div id="burger">
+    <i></i>
+  </div>
+
+  <style>
+
+    #burger {
+        position: relative;
+        width: 24px;
+        height: 18px;
+        cursor: pointer;
+    }
+
+    #burger:before {
+        content: '';
+        position: absolute;
+        background-color: var(--clr-white);
+        width: 100%;
+        height: 2px;
+        top: 0;
+        transition: .2s all;
+    }
+
+    #burger:after {
+        content: '';
+        position: absolute;
+        background-color: var(--clr-white);
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        transition: .2s all;
+    }
+
+    #burger i {
+        opacity: 1;
+        position: absolute;
+        background-color: var(--clr-white);
+        width: 80%;
+        height: 2px;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        transition: .2S all;
+    }
+
+
+    .burgeractive i {
+        opacity: 0 !important;
+        width: 0% !important;
+    }
+
+    .burgeractive:before {
+        top: 50% !important;
+        transform: rotate(45deg);
+        border-radius: 4px;
+        transition: .2s all;
+    }
+
+    .burgeractive:after {
+        top: 50% !important;
+        transform: rotate(-45deg);
+        border-radius: 4px;
+        transition: .2s all;
+    } 
+
+  </style>
+
+
+<script>
+
+    const btn = document.querySelector('#burger');
+
+    btn.addEventListener('click', ()=>{
+        btn.classList.toggle('burgeractive');
+    });
+
+</script>

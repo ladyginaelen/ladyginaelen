@@ -1,0 +1,50 @@
+---
+---
+
+<div class="mobile-hero">
+    <div class="img-container">
+        <img src="mob-hero-img.jpg" alt="" data-scroll data-scroll-speed="0.1">
+    </div>
+    <p>✦</p>
+    <p>Стилист имиджмейкер</p>
+</div>
+
+
+<style>
+
+    .mobile-hero {
+        display: none;
+    }
+
+
+
+    @media (max-width: 1279px) { 
+
+    .mobile-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 2rem;
+        gap: 2rem;
+    } 
+
+    .mobile-hero p {
+        text-align: center;
+        font-size: 1.3rem;
+        color: var(--clr-white);
+        font-weight: 300;
+    }
+
+    .img-container {
+        overflow: hidden;
+        border-radius: 50%;
+        height: 40vh;
+    }
+
+    img {
+    }
+
+    }
+
+</style>

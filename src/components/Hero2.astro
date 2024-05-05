@@ -1,11 +1,13 @@
 ---
 import CircleText from '../components/CircleText.astro'
 import { Icon } from 'astro-icon/components'
+import MobHero from './MobHero.astro'
 ---
 
 
 <section class="hero">
     <p class="heading" data-scroll data-scroll-speed="0.7">LADYGINA ✦ ELENA ✦ LADYGINA ✦  ELENA ✦ </p>
+    <MobHero/>
     <div class="hero-content">
         <div class="left">
             <p> Стилист<br> имиджмейкер</p>
@@ -58,8 +60,8 @@ import { Icon } from 'astro-icon/components'
         background: white;
         filter: blur(180px);
         width: 700px;
-        height: 800px;
-        bottom: -100px; 
+        height: 700px;
+        bottom: -5vw; 
     }
 
     .heading {
@@ -108,7 +110,7 @@ import { Icon } from 'astro-icon/components'
         line-height: 120%;
         letter-spacing: -1px;
         font-weight: 400;
-        color: var(--clr-white-0);
+        color: var(--clr-white);
          
     }
 
@@ -121,7 +123,8 @@ import { Icon } from 'astro-icon/components'
 
     [data-icon] {
 
-        font-size: 1.3vw;
+        font-size: 2vw;
+        height: 100%;
         margin-bottom: 3rem;
         color: var(--clr-white) !important;
     }

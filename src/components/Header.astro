@@ -1,5 +1,6 @@
 ---
  import { Icon } from 'astro-icon/components'
+ import MenuBtn from './MenuBtn.astro';
 ---
 
 <header>
@@ -21,7 +22,7 @@
      </div>
 
     <ul class="sidebar" data-visible="false">
-     <li><a href="#about">Обо мне</a></li>
+     <li><a href="#about" class="link">Обо мне</a></li>
      <li><a href="#process" class="link">Процесс</a></li>
      <li><a href="#principles" class="link">Принципы</a></li>
      <li><a href="#contacts" class="link">Контакты</a></li>
@@ -39,7 +40,7 @@
     </li>
     </ul>
 
-    <div class="hum open"><Icon name="hum" /></div>
+    <div class="hum open"><MenuBtn /></div>
 
 
   </nav>
@@ -59,6 +60,7 @@
 
   .logo {
     z-index: 99;
+    font-size: 1.3rem;
   }
 
   nav {
@@ -94,6 +96,7 @@
 
   svg {
     height: 100%;
+    stroke-width: 1px;
   }
 
   .social-links {
@@ -120,6 +123,7 @@
   [data-icon] {
     font-size: 1.3vw;
     color: var(--clr-white);
+    height: 100%;
   }
 
 .hum {
@@ -182,6 +186,10 @@
       font-size: 18px;
       height: 100%;
     }
+
+    .social-links2 [data-icon] {
+      font-size: 1.5rem; 
+    }
     .sidebar {
       display: flex;
       justify-content: center;
@@ -205,6 +213,7 @@
   const hum = document.querySelector('.hum');
   const sidebar = document.querySelector('.sidebar');
   const link = document.querySelectorAll('.link');
+  const menuBtn = document.querySelector('#burger')
 
   hum.addEventListener('click', ()=>{
     const visibility = sidebar.getAttribute('data-visible');
@@ -220,6 +229,7 @@
   link.forEach((link) => {
     link.addEventListener('click', ()=>{
       sidebar.setAttribute('data-visible', 'false');
+      menuBtn.classList.toggle('burgeractive');
     })
   })
 
