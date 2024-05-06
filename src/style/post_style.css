@@ -1,0 +1,16 @@
+body {
+  background: #F7F3E8;
+}
+
+.content p {
+    padding-top: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+h2 {
+    font-weight: 400;
+}

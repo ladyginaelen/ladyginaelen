@@ -1,0 +1,115 @@
+---
+import { getAllPosts } from "../../utils/sanity/getAllPosts";
+import { urlForImages } from "../../utils/sanity/urlForImages";
+import PortableText from "../../components/PortableText.astro";
+
+import PostLayout from "../../layouts/PostLayout.astro";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/Header.astro";
+
+export async function getStaticPaths() {
+    const allBlogPosts = await getAllPosts();
+    return allBlogPosts.map(post => ({params: {slug: post.slug.current}, props: { post }}));
+}
+
+const { post } = Astro.props;
+    
+---
+
+<section>
+
+
+    <PostLayout title={post.title}> 
+    
+        <div class="content">
+
+            <h1>{post.title}</h1>
+            <img src={urlForImages(post.mainImage).url()} alt="">
+            <PortableText pText={post.body} />
+
+        </div>
+    
+    </PostLayout>
+
+
+    <Footer />
+    <div class="bg"></div>
+</section>
+
+
+
+<style>
+
+.bg {
+  position: fixed;
+  z-index: 999;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: none;
+}
+
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
+
+
+    section {
+        align-items: center;
+        padding-top: 4rem;
+        color: var(--clr-black);
+        
+    }
+
+    .content {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4rem;
+    }
+    img {
+        width: 800px;
+        margin: 2rem 0;
+        border-radius: 20px;
+    }
+
+    h2 {
+        padding: 10rem;
+    }
+
+    .content p {
+        margin-top: 5rem;
+    }
+
+    @media (max-width: 1279px) {
+        section {
+            padding: 1.5rem;
+        }
+
+        h1 {
+            font-weight: 500;
+            font-size: 24px;
+        }
+    }
+
+
+</style>

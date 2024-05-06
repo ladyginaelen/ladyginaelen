@@ -2,11 +2,12 @@
 ---
 
 <div class="mobile-hero">
-    <div class="img-container">
+    <div class="img-container" data-scroll data-scroll-speed="0.1">
         <img src="mob-hero-img.jpg" alt="" data-scroll data-scroll-speed="0.1">
     </div>
     <p>✦</p>
     <p>Стилист имиджмейкер</p>
+    <hr>
 </div>
 
 
@@ -38,8 +39,22 @@
 
     .img-container {
         overflow: hidden;
-        border-radius: 50%;
+        border-radius: 50% ;
         height: 40vh;
+        width: 70vw;
+        border: 8px solid var(--clr-primary-400);
+        outline: 1px solid var(--clr-white);
+    }
+
+    hr {
+        width: 100%;
+        border: none; 
+        height: 1px;
+        background: var(--clr-white);
+        position: absolute;
+        top: 40%;
+        transform: translateY(50%);
+        z-index: -2;
     }
 
     img {
